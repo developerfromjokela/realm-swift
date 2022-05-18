@@ -55,8 +55,9 @@ let objectServerTestSources = [
     "RLMUser+ObjectServerTests.mm",
     "RLMWatchTestUtility.h",
     "RLMWatchTestUtility.m",
-    "EventTests.swift" ,
-    "RealmServer.swift" ,
+    "EventTests.swift",
+    "RealmServer.swift",
+    "SwiftAsymmetricSyncServerTests.swift",
     "SwiftCollectionSyncTests.swift",
     "SwiftFlexibleSyncServerTests.swift",
     "SwiftMongoClientTests.swift",
@@ -112,7 +113,7 @@ let package = Package(
             targets: ["Realm", "RealmSwift"]),
     ],
     dependencies: [
-        .package(name: "RealmDatabase", url: "https://github.com/realm/realm-core", .exact(Version(coreVersionStr)!))
+        .package(name: "RealmDatabase", url: "https://github.com/realm/realm-core", .branch("master"))
     ],
     targets: [
       .target(
@@ -303,7 +304,8 @@ let package = Package(
                 "SwiftObjectServerPartitionTests.swift",
                 "SwiftUIServerTests.swift",
                 "SwiftMongoClientTests.swift",
-                "SwiftFlexibleSyncServerTests.swift"
+                "SwiftFlexibleSyncServerTests.swift",
+                "SwiftAsymmetricSyncServerTests.swift"
             ]
         ),
         objectServerTestTarget(
