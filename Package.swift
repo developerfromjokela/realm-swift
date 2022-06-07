@@ -103,7 +103,6 @@ let package = Package(
         .tvOS(.v9),
         .watchOS(.v2)
     ],
-    swiftSettings: [.unsafeFlags(["-Xfrontend", "-requirement-machine-inferred-signatures=off"])],
     products: [
         .library(
             name: "Realm",
@@ -220,6 +219,7 @@ let package = Package(
         .target(
             name: "RealmSwift",
             dependencies: ["Realm"],
+            swiftSettings: [.unsafeFlags(["-Xfrontend", "-requirement-machine-inferred-signatures=off"])],
             path: "RealmSwift",
             exclude: [
                 "Nonsync.swift",
