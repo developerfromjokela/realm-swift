@@ -219,13 +219,12 @@ let package = Package(
         .target(
             name: "RealmSwift",
             dependencies: ["Realm"],
-            swiftSettings: [.unsafeFlags(["-Xfrontend", "-requirement-machine-inferred-signatures=off"])],
             path: "RealmSwift",
             exclude: [
                 "Nonsync.swift",
                 "RealmSwift-Info.plist",
                 "Tests",
-            ]
+            ], swiftSettings: [.unsafeFlags(["-Xfrontend", "-requirement-machine-inferred-signatures=off"])]
         ),
         .target(
             name: "RealmTestSupport",
